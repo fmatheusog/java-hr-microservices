@@ -11,6 +11,6 @@ import com.fmatheusog.hrpayroll.entities.Worker;
 @Component
 @FeignClient(name = "hr-worker", path = "/workers")
 public interface WorkerFeignClient {
-	@GetMapping
-	ResponseEntity<Worker> findById(@PathVariable long id);
+	@GetMapping(value = "/{id}")
+	ResponseEntity<Worker> findById(@PathVariable Long id);
 }
